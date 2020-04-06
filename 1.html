@@ -10,16 +10,19 @@
 </head>
 
 <body>
+   
     <div data-role="page" id="isi">
-             <div ></div>
+        <div data-role="header">
+            <h1>Cicilan</h1>
+        </div>
               <label for="">Pinjaman :</label>
               <input type="text" name="pinjaman" id="pinjaman" value="">
               <label for="">Cicilan :</label>
               <input type="text" name="cicilan" id="cicilan" value="">
-              <button id="submit" class="ui-btn">Submit</button>
+              <button id="submit" class="ui-btn data-inline-true">Submit</button>
               <table data-role="table" class="ui-responsive" id="tableID">
                 <thead>
-                  <tr>
+                  <tr class="ui-bar-d">
                     <th>Pinjaman</th>
                     <th>Waktu Pinjam</th>
                     <th>Pengembalian</th>
@@ -30,16 +33,16 @@
                 </tbody>
               </table>
               <p><a href="#isi2">Lihat detail cicilan</a></p>
-    </div>
+  
     
-   
+</div> 
     <div data-role="page2" id="isi2">
         <table data-role="table" class="ui-responsive" id="tableID">
             <thead>
-              <tr>
+              <tr class="ui-bar-d">
                 <th>Pinjaman</th>
-                <th>Waktu Pinjam</th>
-                <th>Pengembalian</th>
+                <th>Waktu Pinjam(Bulan)</th>
+                <th>Pengembalian Bulan Pertama</th>
                 <th>Cicilan per bulan</th>
                 <th>Total pengembalian</th>
               </tr>
@@ -58,7 +61,7 @@
             pinjaman = $("#pinjaman").val();
             cicilan = $("#cicilan").val();
             if (cicilan > 0 && cicilan < 7){
-                    waktu = 2;
+                waktu = 2;
             } 
             else if (cicilan > 6 && cicilan < 13){
                 waktu = 1.5;
