@@ -11,7 +11,7 @@
 
 <body>
     <div data-role="page" id="isi">
-        
+             <div ></div>
               <label for="">Pinjaman :</label>
               <input type="text" name="pinjaman" id="pinjaman" value="">
               <label for="">Cicilan :</label>
@@ -25,7 +25,7 @@
                     <th>Pengembalian</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="tttbody">
                     
                 </tbody>
               </table>
@@ -40,6 +40,7 @@
                 <th>Pinjaman</th>
                 <th>Waktu Pinjam</th>
                 <th>Pengembalian</th>
+                <th>Cicilan per bulan</th>
                 <th>Total pengembalian</th>
               </tr>
             </thead>
@@ -69,13 +70,13 @@
             persen = hasil;
             hasil = parseFloat(hasil) + parseFloat(pinjaman);
             hasilbaru = hasil;
-            $("tbody").append("<tr><th>"+pinjaman+"</th><th>"+cicilan+"</th><th>"+hasil+"</th></tr>");
+            $(".tttbody").append("<tr><th>"+pinjaman+"</th><th>"+cicilan+"</th><th>"+hasil+"</th></tr>");
             for (i =0;i<cicilan;i++){
                 hasilbaru = hasilbaru + parseFloat(persen);
             }
-            hasil2 = parseFloat(hasil);
+            hasil2 = parseFloat(hasilbaru);
             
-            $(".ttbody").append("<tr><th>"+pinjaman+"</th><th>"+cicilan+"</th><th>"+hasil+"</th><th>"+hasil2+"</th></tr>");
+            $(".ttbody").append("<tr><th>"+pinjaman+"</th><th>"+cicilan+"</th><th>"+hasil+"</th><th>"+persen+"</th><th>"+hasil2+"</th></tr>");
         });
     })
     
