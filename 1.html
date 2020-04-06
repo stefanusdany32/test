@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="isi">
+        <div data-role="header">
+          <form action="">
+              <label for="">Pinjaman :</label>
+              <input type="text" name="pinjaman" id="pinjaman" value="">
+              <label for="">Cicilan :</label>
+              <input type="text" name="cicilan" id="cicilan" value="">
+              <button id="submit" class="ui-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <table data-role="table" id="table" data-mode="reflow" class="ui-responsive">
+        <thead>
+            <tr>
+                <th>Pinjaman</th>
+                <th>Cicilan</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody class="ttbody">
+            
+
+            
+            
+        </tbody>
+
+    </table>
+</body>
+<script>
+   $(document).ready(function(){
+        $("#submit").click(function(){
+            pinjaman = $("#pinjaman").val();
+            cicilan = $("#cicilan").val();
+            hasil = pinjaman + (pinjaman *2/100*cicilan);
+            $(".ttbody").append("<tr><th>"+pinjaman+"</th><th>"+cicilan+"</th><th>"+hasil+"</th></tr>");
+        });
+    })
+    
+</script>
+</html>
