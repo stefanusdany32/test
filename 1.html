@@ -21,18 +21,34 @@
                 <thead>
                   <tr>
                     <th>Pinjaman</th>
-                    <th>Waktu pinjam</th>
-                    <th>Penembalian</th>
+                    <th>Waktu Pinjam</th>
+                    <th>Pengembalian</th>
                   </tr>
                 </thead>
                 <tbody>
                     
                 </tbody>
               </table>
+              <p><a href="#isi2">Lihat detail cicilan</a></p>
     </div>
     
    
-    </table>
+    <div data-role="page2" id="isi2">
+        <table data-role="table" class="ui-responsive" id="tableID">
+            <thead>
+              <tr>
+                <th>Pinjaman</th>
+                <th>Waktu Pinjam</th>
+                <th>Pengembalian</th>
+                <th>Total pengembalian</th>
+              </tr>
+            </thead>
+            <tbody class="ttbody">
+                
+            </tbody>
+            <p><a href="#isi">Back</a></p>
+    </div>
+   
 </div>
 </body>
 <script>
@@ -40,9 +56,26 @@
         $("button").click(function(){
             pinjaman = $("#pinjaman").val();
             cicilan = $("#cicilan").val();
-            hasil =  parseFloat(pinjaman *2/100*cicilan);
+            if (cicilan > 0 && cicilan < 7){
+                    waktu = 2;
+            } 
+            else if (cicilan > 6 && cicilan < 13){
+                waktu = 1.5;
+            }
+            else if (cicilan >12){
+                waktu = 1;
+            }
+            hasil =  parseFloat(pinjaman *waktu/100*cicilan);
+            persen = hasil;
             hasil = parseFloat(hasil) + parseFloat(pinjaman);
+            hasilbaru = hasil;
             $("tbody").append("<tr><th>"+pinjaman+"</th><th>"+cicilan+"</th><th>"+hasil+"</th></tr>");
+            for (i =0;i<cicilan;i++){
+                hasilbaru = hasilbaru + parseFloat(persen);
+            }
+            hasil2 = parseFloat(hasil);
+            
+            $(".ttbody").append("<tr><th>"+pinjaman+"</th><th>"+cicilan+"</th><th>"+hasil+"</th><th>"+hasil2+"</th></tr>");
         });
     })
     
